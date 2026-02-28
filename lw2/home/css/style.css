@@ -21,21 +21,20 @@
     margin-left: 482px;
 }
 
-.profile {
+.timeline-profile {
     display: inline;
     justify-content: space-between;
     opacity: 1;
 }
 
-.profAvatar {
+.profile-avatar {
     width: 32px;
     height: 32px;
     opacity: 1;
 }
 
-.username {
+.profile-username {
     opacity: 1;
-    font-family: "Golos Text";
     font-weight: 500;
     font-style: Medium;
     font-size: 14px;
@@ -45,15 +44,38 @@
     color: #222222;
 }
 
-.change {
+.profile-change {
     width: 24px;
     height: 24px;
     opacity: 1;
 }
 
-.posts {
+.timeline-posts {
     width: 474px;
     height: 474px;
     margin-top: 16px;
     opacity: 1;
+}
+
+.timeline-react {
+    display: inline;
+    width: 68px;
+    height: 30px;
+    margin-top: 554px;
+    border-radius: 8px;
+    gap: 3px;
+    opacity: 1;
+    padding-top: 6px;
+    padding-right: 12px;
+    padding-bottom: 6px;
+    padding-left: 12px;
+}
+
+.react-count {
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: -0.15px;
+    vertical-align: middle;
 }

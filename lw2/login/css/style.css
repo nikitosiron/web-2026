@@ -2,7 +2,7 @@
     font-family: "Golos Text", sans-serif;
 }
 
-.h1 {
+.main-title {
     width: 385px;
     height: 180px;
     margin-top: 100px;
@@ -16,7 +16,7 @@
     color: #222222;
 }
 
-.logImage {
+.main-logImage {
     width: 462px;
     height: 501px;
     margin-left: 269px;
@@ -35,7 +35,7 @@
     margin-left: 838px;
 }
 
-.formText {
+.form-Text {
     font-weight: 400;
     font-style: normal;
     font-size: 15px;
@@ -43,7 +43,7 @@
     letter-spacing: -0.15px;
 }
 
-.formTextUnder {
+.form-textUnder {
     font-weight: 400;
     font-style: normal;
     font-size: 13px;
@@ -52,7 +52,7 @@
     color: #808080;
 }
 
-.inputLog {
+.form-inputLog {
     width: 343px;
     height: 22px;
     justify-content: space-between;
@@ -64,7 +64,7 @@
     padding-left: 12px;
 }
 
-.enterButton {
+.form-enterButton {
     margin-top: 32px;
     width: 370px;
     height: 48px;
