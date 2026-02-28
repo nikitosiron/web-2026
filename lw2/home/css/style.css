@@ -1,0 +1,59 @@
+* {
+    font-family: "Golos Text", sans-serif;
+}
+
+.header {
+    width: 40px;
+    height: 40px;
+    margin-top: 40px;
+    margin-left: 16px;
+    border-radius: 10px;
+    gap: 10px;
+    opacity: 1;
+    display: block;
+}
+
+.timeline {
+    width: 700px;
+    height: 474px;
+    opacity: 1;
+    margin-top: 36px;
+    margin-left: 482px;
+}
+
+.profile {
+    display: inline;
+    justify-content: space-between;
+    opacity: 1;
+}
+
+.profAvatar {
+    width: 32px;
+    height: 32px;
+    opacity: 1;
+}
+
+.username {
+    opacity: 1;
+    font-family: "Golos Text";
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.15px;
+    vertical-align: middle;
+    color: #222222;
+}
+
+.change {
+    width: 24px;
+    height: 24px;
+    opacity: 1;
+}
+
+.posts {
+    width: 474px;
+    height: 474px;
+    margin-top: 16px;
+    opacity: 1;
+}
