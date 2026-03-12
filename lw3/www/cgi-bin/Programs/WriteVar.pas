@@ -1,0 +1,9 @@
+PROGRAM WriteVar(INPUT, OUTPUT);
+USES
+  DOS;
+BEGIN
+  WRITELN(GetEnv('MY_LOCALE'));
+  READLN
+END.
+
+
