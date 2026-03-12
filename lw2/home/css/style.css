@@ -5,7 +5,7 @@
 .header {
     width: 40px;
     height: 40px;
-    margin-top: 40px;
+    margin-top: 20px;
     margin-left: 16px;
     border-radius: 10px;
     gap: 10px;
@@ -13,16 +13,15 @@
     display: block;
 }
 
-.timeline {
+.timeline-post {
     width: 700px;
     height: 474px;
     opacity: 1;
-    margin-top: 36px;
+    margin-top: 15px;
     margin-left: 482px;
 }
 
-.timeline-profile {
-    display: inline;
+.post-profile {
     justify-content: space-between;
     opacity: 1;
 }
@@ -50,18 +49,18 @@
     opacity: 1;
 }
 
-.timeline-posts {
+.post-foto {
     width: 474px;
     height: 474px;
     margin-top: 16px;
     opacity: 1;
 }
 
-.timeline-react {
-    display: inline;
+.post-react {
+    background-color: rgba(34, 34, 34, 0.05);
     width: 68px;
     height: 30px;
-    margin-top: 554px;
+    margin-top: 15px;
     border-radius: 8px;
     gap: 3px;
     opacity: 1;
@@ -78,4 +77,39 @@
     line-height: 18px;
     letter-spacing: -0.15px;
     vertical-align: middle;
+}
+
+.post-text {
+    display: block;
+    margin-top: 30px;
+}
+
+.text-author {
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: -0.15px;
+    color: #222222;
+    width: 474px;
+    height: 37px;
+    top: 600px;
+    opacity: 1;
+}
+
+.text-func {
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: -0.15px;
+    color: #808080;
+}
+
+.timeline-post2 {
+    width: 700px;
+    height: 474px;
+    opacity: 1;
+    margin-top: 350px;
+    margin-left: 482px;
 }

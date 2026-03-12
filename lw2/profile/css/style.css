@@ -1,0 +1,86 @@
+* {
+    font-family: "Golos Text", sans-serif;
+}
+
+.header {
+    width: 40px;
+    height: 40px;
+    margin-top: 20px;
+    margin-left: 16px;
+    border-radius: 10px;
+    gap: 10px;
+    opacity: 1;
+    display: block;
+}
+
+.post {
+    margin-top: 82px;
+    margin-left: 483px;
+    display: block;
+}
+
+.foto-box {
+    width: 474px;
+    height: 474px;
+    background-color: #F2F3F5;
+}
+
+.box-add {
+    display: block;
+    margin-left: 200px;
+}
+
+.add-button {
+    margin-top: 225px;
+    width: 143px;
+    height: 48px;
+    opacity: 1;
+    border-radius: 10px;
+    padding-right: 16px;
+    padding-left: 16px;
+    background-color: #222222;
+    color: #FFFFFF;
+    border: 0;
+}
+
+.foto-add {
+    margin-top: 20px;
+}
+
+.add-text {
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: -0.15px;
+    color: #3F8AE0;
+}
+
+.add-inscription {
+    color: #808080;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: -0.15px;
+}
+
+.post-share {
+    margin-top: 359px;
+    width: 140px;
+    height: 48px;
+    top: 32px;
+    left: 483px;
+    opacity: 1;
+    border-radius: 10px;
+    padding-right: 16px;
+    padding-left: 16px;
+    background-color: #B4B4B4;
+    color: #FFFFFF;
+    border: 0;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
