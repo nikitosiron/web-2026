@@ -1,0 +1,107 @@
+* {
+    font-family: "Golos Text", sans-serif;
+}
+
+.header {
+    width: 40px;
+    height: 40px;
+    margin-top: 20px;
+    margin-left: 16px;
+    border-radius: 10px;
+    gap: 10px;
+    opacity: 1;
+    display: block;
+}
+
+.timeline-post {
+    width: 700px;
+    height: 474px;
+    opacity: 1;
+    margin-top: 15px;
+    margin-left: 482px;
+}
+
+.post-profile {
+    justify-content: space-between;
+    opacity: 1;
+}
+
+.profile-avatar {
+    width: 32px;
+    height: 32px;
+    opacity: 1;
+}
+
+.profile-username {
+    opacity: 1;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.15px;
+    vertical-align: middle;
+    color: #222222;
+}
+
+.profile-change {
+    width: 24px;
+    height: 24px;
+    opacity: 1;
+}
+
+.post-foto {
+    width: 474px;
+    height: 474px;
+    margin-top: 16px;
+    opacity: 1;
+}
+
+.post-react {
+    background-color: rgba(34, 34, 34, 0.05);
+    width: 68px;
+    height: 30px;
+    margin-top: 15px;
+    border-radius: 8px;
+    gap: 3px;
+    opacity: 1;
+    padding-top: 6px;
+    padding-right: 12px;
+    padding-bottom: 6px;
+    padding-left: 12px;
+}
+
+.react-count {
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: -0.15px;
+    vertical-align: middle;
+}
+
+.post-text {
+    display: block;
+    margin-top: 30px;
+}
+
+.text-author {
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: -0.15px;
+    color: #222222;
+    width: 474px;
+    height: 37px;
+    top: 600px;
+    opacity: 1;
+}
+
+.text-func {
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: -0.15px;
+    color: #808080;
+}

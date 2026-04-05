@@ -25,7 +25,7 @@ BEGIN
     WRITELN('The british are coming by land');
   IF Sea
   THEN
-    WRITELN('The british are coming by sea');
+    WRITELN('The british are coming by sea')
 END;
 
 BEGIN {SarahRevere}  
