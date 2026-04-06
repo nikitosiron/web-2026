@@ -15,14 +15,16 @@
     <?php
     $posts = [
         [
+            'id' => 1,
             'title' => 'The Road Ahead',
-            'subtitle' => '',
-            'img_modifier' => '',
-            'author' => '',
-            // другие свойства этого поста
+            'subtitle' => 'subtitle',
+            'author' => 'Me',
         ],
         [
-            // свойства второго поста
+            'id' => 2,
+            'title' => 'The Road Ahead',
+            'subtitle' => 'subtitle',
+            'author' => 'Me',
         ],
     ];
     ?>
@@ -37,6 +39,11 @@
             include 'component/post_preview.php';
         }
         ?>
+        <div>
+            <h3><?= $post['title'] ?></h3>
+            <h4><?= $post['subtitle'] ?></h4>
+            <span><?= $post['author'] ?></span>
+        </div>
     </div>
 </body>
 
