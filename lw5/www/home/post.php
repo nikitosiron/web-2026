@@ -11,10 +11,8 @@ $posts = [
                   Вспоминается Бродский: «Поздно ночью, в уснувшей долине, 
                   на самом дне, в городе</p>',
         'image' => 'images/post1.jpg',
-        'date' => '15 марта 2024',
+        'date' => strtotime('2024-03-15 14:30:00'),
         'likes' => 203,
-        'views' => 1542,      // Добавил просмотры
-        'comments' => 28      // Добавил комментарии
     ],
     2 => [
         'id' => 2,
@@ -24,14 +22,11 @@ $posts = [
                   Вспоминается Бродский: «Поздно ночью, в уснувшей долине, 
                   на самом дне, в городе</p>',
         'image' => 'images/post2.jpg',
-        'date' => '10 марта 2024',
+        'date' => strtotime('2024-03-10 10:15:00'),
         'likes' => 1000,
-        'views' => 8942,      // Добавил просмотры
-        'comments' => 156     // Добавил комментарии
     ]
 ];
 
-// Проверяем, существует ли пост
 if (!$postId || !isset($posts[$postId])) {
     header('HTTP/1.0 404 Not Found');
     die('<h1>Ошибка 404 - Пост не найден</h1>
@@ -64,7 +59,6 @@ $post = $posts[$postId];
     </div>
 
     <div class="post-container">
-        <!-- Блок с автором -->
         <div class="post-meta">
             <div class="author-info">
                 <div class="post-author">
@@ -73,34 +67,22 @@ $post = $posts[$postId];
                 <span class="author-name"><?= htmlspecialchars($post['author']) ?></span>
             </div>
             <div class="post-details">
-                <span class="date"><?= htmlspecialchars($post['date']) ?></span>
+                <span class="date"><?= htmlspecialchars(date('d.m.Y', $post['date'])) ?></span>
             </div>
         </div>
 
-        <!-- Изображение поста -->
         <?php if (!empty($post['image'])): ?>
             <div class="post-image">
                 <img src="<?= htmlspecialchars($post['image']) ?>" alt="post image">
             </div>
         <?php endif; ?>
 
-        <!-- Статистика -->
-        <div class="post-stats">
-            <div class="stat">👁️ <?= number_format($post['views']) ?> просмотров</div>
-            <div class="stat">❤️ <?= number_format($post['likes']) ?> лайков</div>
-            <div class="stat">💬 <?= number_format($post['comments']) ?> комментариев</div>
-        </div>
-
-        <!-- Контент -->
         <div class="post-content">
             <?= $post['content'] ?>
         </div>
 
-        <!-- Кнопки действий -->
         <div class="post-actions">
-            <button class="like-btn">❤️ Нравится (<?= $post['likes'] ?>)</button>
-            <button class="comment-btn">💬 Комментировать</button>
-            <button class="share-btn">📤 Поделиться</button>
+            <button class="like-btn">❤️ Нравится <?= $post['likes'] ?></button>
         </div>
     </div>
 </body>
