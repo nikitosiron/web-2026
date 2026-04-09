@@ -43,7 +43,7 @@ $post = $posts[$postId];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= htmlspecialchars($post['author']) ?> - Пост</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap" rel="stylesheet">
@@ -51,11 +51,11 @@ $post = $posts[$postId];
 
 <body>
     <div class="header">
-        <a href="index.php">
-            <img src="images/menuHome.png" alt="home">
+        <a href="../index.php">
+            <img src="../images/menuHome.png" alt="home">
         </a>
-        <img src="images/menuProfile.png" alt="profile">
-        <img src="images/menuPlus.png" alt="plus">
+        <img src="../images/menuProfile.png" alt="profile">
+        <img src="../images/menuPlus.png" alt="plus">
     </div>
 
     <div class="post-container">
@@ -73,7 +73,7 @@ $post = $posts[$postId];
 
         <?php if (!empty($post['image'])): ?>
             <div class="post-image">
-                <img src="<?= htmlspecialchars($post['image']) ?>" alt="post image">
+                <img src="../images/<?= htmlspecialchars($post['image']) ?>" alt="post image">
             </div>
         <?php endif; ?>
 

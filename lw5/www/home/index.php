@@ -13,7 +13,7 @@
 
 <body>
     <?php
-   $posts = [
+    $posts = [
         1 => [
             'id' => 1,
             'title' => 'The Road Ahead',
@@ -34,11 +34,15 @@
         <img src="images/menuPlus.png" alt="plus">
     </div>
     <div class="timeline">
-        <?php
-        foreach ($posts as $post) {
-            include 'component/post_preview.php';
-        }
-        ?>
+        <?php foreach ($posts as $post): ?>
+            <div class="post-preview">
+                <a href="component/post.php?postId=<?= $post['id'] ?>">
+                    <h3><?= htmlspecialchars($post['title']) ?></h3>
+                    <p><?= htmlspecialchars($post['subtitle']) ?></p>
+                    <span><?= htmlspecialchars($post['author']) ?></span>
+                </a>
+            </div>
+        <?php endforeach; ?>
         <div>
             <h3><?= htmlspecialchars($post['title']) ?></h3>
             <h4><?= htmlspecialchars($post['subtitle']) ?></h4>
