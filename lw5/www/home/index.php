@@ -13,14 +13,14 @@
 
 <body>
     <?php
-    $posts = [
-        [
+   $posts = [
+        1 => [
             'id' => 1,
             'title' => 'The Road Ahead',
             'subtitle' => 'subtitle',
             'author' => 'Me',
         ],
-        [
+        2 => [
             'id' => 2,
             'title' => 'The Road Ahead',
             'subtitle' => 'subtitle',
@@ -40,9 +40,9 @@
         }
         ?>
         <div>
-            <h3><?= $post['title'] ?></h3>
-            <h4><?= $post['subtitle'] ?></h4>
-            <span><?= $post['author'] ?></span>
+            <h3><?= htmlspecialchars($post['title']) ?></h3>
+            <h4><?= htmlspecialchars($post['subtitle']) ?></h4>
+            <span><?= htmlspecialchars($post['author']) ?></span>
         </div>
     </div>
 </body>
