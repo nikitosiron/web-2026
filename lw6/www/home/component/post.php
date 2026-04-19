@@ -1,39 +1,31 @@
 <?php
+require_once '../config/database.php';
+
+$connection = connectDatabase();
+
 $postId = isset($_GET['postId']) ? (int)$_GET['postId'] : null;
 
-// Массив с данными постов
-$posts = [
-    1 => [
-        'id' => 1,
-        'author' => 'Ваня Денисов',
-        'author_avatar' => 'images/avatar.jpg',
-        'content' => '<p>Как красиво сегодня на улице! Настоящая зима)) 
-                  Вспоминается Бродский: «Поздно ночью, в уснувшей долине, 
-                  на самом дне, в городе</p>',
-        'image' => 'images/post1.jpg',
-        'date' => strtotime('2024-03-15 14:30:00'),
-        'likes' => 203,
-    ],
-    2 => [
-        'id' => 2,
-        'author' => 'Лиза Демина',
-        'author_avatar' => 'images/avatar2.jpg',
-        'content' => '<p>Как красиво сегодня на улице! Настоящая зима)) 
-                  Вспоминается Бродский: «Поздно ночью, в уснувшей долине, 
-                  на самом дне, в городе</p>',
-        'image' => 'images/post2.jpg',
-        'date' => strtotime('2024-03-10 10:15:00'),
-        'likes' => 1000,
-    ]
-];
-
-if (!$postId || !isset($posts[$postId])) {
+if (!$postId) {
     header('HTTP/1.0 404 Not Found');
-    die('<h1>Ошибка 404 - Пост не найден</h1>
-         <p><a href="index.php">Вернуться на главную</a></p>');
+    die('<h1>Ошибка 404 - Пост не найден</h1>');
 }
 
-$post = $posts[$postId];
+$query = "SELECT 
+            post.*, 
+            user.name AS author,
+            user.avatar AS author_avatar
+          FROM post 
+          JOIN user ON post.user_id = user.id 
+          WHERE post.id = :id";
+
+$statement = $connection->prepare($query);
+$statement->execute([':id' => $postId]);
+$post = $statement->fetch();
+
+if (!$post) {
+    header('HTTP/1.0 404 Not Found');
+    die('<h1>Ошибка 404 - Пост не найден</h1>');
+}
 ?>
 
 <!DOCTYPE html>
@@ -62,18 +54,18 @@ $post = $posts[$postId];
         <div class="post-meta">
             <div class="author-info">
                 <div class="post-author">
-                    <img src="<?= htmlspecialchars($post['author_avatar']) ?>" alt="avatar">
+                    <img src="../<?= htmlspecialchars($post['author_avatar']) ?>">
                 </div>
                 <span class="author-name"><?= htmlspecialchars($post['author']) ?></span>
             </div>
             <div class="post-details">
-                <span class="date"><?= htmlspecialchars(date('d.m.Y', $post['date'])) ?></span>
+                <span class="date"><?= htmlspecialchars(date('d.m.Y', strtotime($post['posted_at']))) ?></span>
             </div>
         </div>
 
         <?php if (!empty($post['image'])): ?>
             <div class="post-image">
-                <img src="../images/<?= htmlspecialchars($post['image']) ?>" alt="post image">
+                <img src="../<?= htmlspecialchars($post['image']) ?>" alt="post_image">
             </div>
         <?php endif; ?>
 

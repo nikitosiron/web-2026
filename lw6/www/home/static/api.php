@@ -109,42 +109,54 @@ if (isset($data['image_name']) && !empty($data['image_name'])) {
     $filename = 'image_' . time() . '_' . uniqid() . '.' . $extension;
 }
 
-// 8. Создаем папку static, если её нет
+// 8. Создаем папку для картинок
 $staticDir = __DIR__ . '/images';
 if (!file_exists($staticDir)) {
     mkdir($staticDir, 0755, true);
 }
 
-// 9. Сохраняем файл
-$filePath = $stDaticir . '/' . $filename;
+// 9. Сохраняем файл (ИСПРАВЛЕНО: $staticDir, а не $staticDaticir)
+$filePath = $staticDir . '/' . $filename;
 $result = file_put_contents($filePath, $imageData);
 
-if ($result === false) {
-    http_response_code(500);
+// 10. Формируем URL (ИСПРАВЛЕНО: добавил слеш)
+$baseUrl = $protocol . $host . '/home/static/images/' . $filename;
+
+//БД
+require_once __DIR__ . '/../config/database.php';
+
+$connection = connectDatabase();
+
+if (!isset($data['title']) || !isset($data['content']) || !isset($data['user_id'])) {
+    http_response_code(400);
     echo json_encode([
         'success' => false,
-        'error' => 'Не удалось сохранить файл'
+        'error' => 'Обязательные поля: title, content, user_id'
     ]);
     exit;
 }
 
-// 10. Формируем URL для доступа к файлу
-$protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https://' : 'http://';
-$host = $_SERVER['HTTP_HOST'];
-$baseUrl = $protocol . $host . '/home/static/' . $filename;
+$query = "INSERT INTO post (title, subtitle, content, image, user_id) 
+          VALUES (:title, :subtitle, :content, :image, :user_id)";
 
-// 11. Успешный ответ
-http_response_code(200);
+$statement = $connection->prepare($query);
+$statement->execute([
+    ':title' => $data['title'],
+    ':subtitle' => $data['subtitle'] ?? '',
+    ':content' => $data['content'],
+    ':image' => 'static/images/' . $filename,
+    ':user_id' => $data['user_id']
+]);
+
+$postId = $connection->lastInsertId();
+
+// 11. Успешный ответ (добавил post_id)
 echo json_encode([
     'success' => true,
-    'message' => 'Изображение успешно загружено',
+    'message' => 'Пост успешно создан',
     'data' => [
+        'post_id' => $postId,
         'filename' => $filename,
-        'path' => $filePath,
-        'url' => $baseUrl,
-        'size' => strlen($imageData),
-        'size_kb' => round(strlen($imageData) / 1024, 2),
-        'mime_type' => $mimeType,
-        'uploaded_at' => date('Y-m-d H:i:s')
+        'url' => $baseUrl
     ]
 ]);

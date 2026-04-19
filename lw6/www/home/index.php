@@ -13,20 +13,21 @@
 
 <body>
     <?php
-    $posts = [
-        1 => [
-            'id' => 1,
-            'title' => 'The Road Ahead',
-            'subtitle' => 'subtitle',
-            'author' => 'Me',
-        ],
-        2 => [
-            'id' => 2,
-            'title' => 'The Road Ahead',
-            'subtitle' => 'subtitle',
-            'author' => 'Me',
-        ],
-    ];
+    require_once 'config/database.php';
+
+    $connetction = connectDatabase();
+
+    $query = "SELECT 
+            post.*, 
+            user.name AS author,
+            user.avatar AS author_avatar
+        FROM post 
+        JOIN user ON post.user_id = user.id 
+        ORDER BY post.posted_at DESC";
+
+    $stmt = $connetction->prepare($query);
+    $stmt->execute();
+    $posts = $stmt->fetchAll();
     ?>
     <div class="header">
         <img src="images/menuHome.png" alt="home">
@@ -43,12 +44,9 @@
                 </a>
             </div>
         <?php endforeach; ?>
-        <div>
-            <h3><?= htmlspecialchars($post['title']) ?></h3>
-            <h4><?= htmlspecialchars($post['subtitle']) ?></h4>
-            <span><?= htmlspecialchars($post['author']) ?></span>
-        </div>
     </div>
+</body>
+</html>
 </body>
 
 </html>
