@@ -1,0 +1,208 @@
+* {
+    font-family: "Golos Text", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 16px;
+}
+
+.header img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.post-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+}
+
+.post-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.author-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.author-info .author-name {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.15px;
+    color: #222222;
+}
+
+.post-author img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.post-details {
+    display: flex;
+    gap: 15px;
+}
+
+.post-details .date {
+    font-size: 12px;
+    color: #808080;
+}
+
+.post-image {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.post-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+.post-stats {
+    display: flex;
+    gap: 20px;
+    padding: 15px 0;
+    margin: 15px 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.post-stats .stat {
+    font-size: 14px;
+    color: #808080;
+}
+
+.post-content {
+    margin: 30px 0;
+    line-height: 1.6;
+    font-size: 16px;
+    color: #222222;
+}
+
+.post-content p {
+    margin-bottom: 15px;
+}
+
+/* Кнопки действий */
+.post-actions {
+    display: flex;
+    gap: 15px;
+    margin: 30px 0;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.post-actions button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgba(34, 34, 34, 0.05);
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.post-actions button:hover {
+    background-color: rgba(34, 34, 34, 0.1);
+}
+
+.like-btn {
+    color: #e74c3c;
+}
+
+.timeline-post {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.post-profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.profile-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-username {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.15px;
+    color: #222222;
+}
+
+.profile-change {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.post-foto {
+    width: 100%;
+    max-width: 474px;
+    height: auto;
+    margin: 16px 0;
+    border-radius: 12px;
+}
+
+.post-react {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    background-color: rgba(34, 34, 34, 0.05);
+    padding: 6px 12px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.react-count {
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: -0.15px;
+}
+
+.post-text {
+    display: block;
+    margin-top: 20px;
+}
+
+.text-author {
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: -0.15px;
+    color: #222222;
+    margin-bottom: 5px;
+}
+
+.text-func {
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: -0.15px;
+    color: #808080;
+}

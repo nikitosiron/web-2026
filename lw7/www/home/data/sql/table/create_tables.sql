@@ -1,0 +1,19 @@
+CREATE TABLE user (
+    id INT UNSIGNED AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    avatar VARCHAR(500) NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE post (
+    id INT NOT NULL AUTO_INCREMENT,
+    title VARCHAR(200) NOT NULL,
+    subtitle VARCHAR(200) NULL,
+    content MEDIUMTEXT NOT NULL,
+    image VARCHAR(500) NULL,
+    likes INT NOT NULL DEFAULT 0,
+    posted_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    user_id INT NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (user_id) REFERENCES user(id)
+);
