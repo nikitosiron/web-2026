@@ -13,7 +13,7 @@ CREATE TABLE post (
     image VARCHAR(500) NULL,
     likes INT NOT NULL DEFAULT 0,
     posted_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    user_id INT NOT NULL,
+    user_id INT UNSIGNED NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES user(id)
 );

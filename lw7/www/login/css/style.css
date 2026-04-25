@@ -9,18 +9,21 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
+    background-color: #ffffff;
+    gap: 80px;
 }
 
 .main {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .main-title {
-    position: relative;
-    z-index: 1;
     font-weight: 700;
     font-size: 140px;
-    line-height: 1.2;
+    line-height: 180px;
     letter-spacing: -1.5px;
     color: #222222;
     margin-bottom: 20px;
@@ -40,8 +43,8 @@ body {
     font-size: 15px;
     line-height: 18px;
     letter-spacing: -0.15px;
-    margin-bottom: 8px;
     color: #222222;
+    margin-bottom: 8px;
 }
 
 .form-textUnder {
@@ -50,8 +53,8 @@ body {
     line-height: 16px;
     letter-spacing: -0.08px;
     color: #808080;
-    margin-top: 8px;
-    margin-bottom: 20px;
+    margin-top: 4px;
+    margin-bottom: 24px;
 }
 
 .form-inputLog {
@@ -61,6 +64,7 @@ body {
     border: 1px solid #E0E0E0;
     outline: none;
     font-size: 14px;
+    transition: border-color 0.3s;
 }
 
 .form-inputLog:focus {
@@ -69,6 +73,11 @@ body {
 
 .password-wrapper {
     position: relative;
+    margin-top: 0;
+}
+
+.password-wrapper .form-inputLog {
+    padding-right: 40px;
 }
 
 .password-wrapper img {
@@ -77,6 +86,9 @@ body {
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
+    width: 20px;
+    height: 20px;
+    z-index: 2;
 }
 
 .form-enterButton {
@@ -90,5 +102,5 @@ body {
     cursor: pointer;
     font-size: 16px;
     font-weight: 500;
-    transition: opacity 0.3s;
+    transition: opacity 0.2s;
 }
