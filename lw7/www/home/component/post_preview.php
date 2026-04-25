@@ -1,5 +1,3 @@
-<?php
-?>
 <div class="post-preview">
     <a href="post.php?postId=<?= $post['id'] ?>">
         <h3><?= htmlspecialchars($post['title']) ?></h3>

@@ -9,7 +9,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
     background-color: #ffffff;
     gap: 80px;
 }
@@ -27,6 +26,10 @@ body {
     letter-spacing: -1.5px;
     color: #222222;
     margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    top: 100px;
+    left: -100px;
 }
 
 .main-logImage {

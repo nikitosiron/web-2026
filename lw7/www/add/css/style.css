@@ -1,0 +1,116 @@
+* {
+    font-family: "Golos Text", sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 16px;
+    width: 72px;
+}
+
+.header img {
+    width: 40px;
+    height: 40px;
+}
+
+.post {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 82px;
+    gap: 0;
+}
+
+.post-photo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.photo-box {
+    width: 474px;
+    height: 474px;
+    background-color: #F2F3F5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-add {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.add-foto {
+    width: 64px;
+    height: 64px;
+}
+
+.add-button {
+    width: 143px;
+    height: 48px;
+    border-radius: 10px;
+    padding: 0 16px;
+    background-color: #222222;
+    color: #FFFFFF;
+    border: 0;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.photo-add {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.add-text {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: -0.15px;
+    color: #3F8AE0;
+}
+
+.add-text img {
+    width: 16px;
+    height: 16px;
+}
+
+.add-inscription {
+    color: #808080;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: -0.15px;
+}
+
+.post-share {
+    margin-top: 32px;
+    width: 140px;
+    height: 48px;
+    border-radius: 10px;
+    padding: 0 16px;
+    background-color: #B4B4B4;
+    color: #FFFFFF;
+    border: 0;
+    font-weight: 400;
+    font-size: 16px;
+    cursor: pointer;
+}
