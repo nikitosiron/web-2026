@@ -4,8 +4,6 @@ function uniqueElements(arr) {
   for (let item of arr) {
     const key = String(item);
 
-    // Если ключ уже есть в объекте — прибавляем 1, 
-    // если нет — устанавливаем начальное значение 1
     if (result[key]) {
       result[key]++;
     } else {
